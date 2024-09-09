@@ -45,12 +45,16 @@ INSERT INTO products VALUES
 (10, 3, 'tama', 'Tama 5-Piece Drum Set with Cymbals', '799.99');
 
 -- create the users and grant priveleges to those users
+CREATE USER IF NOT EXISTS mgs_user@localhost
+IDENTIFIED BY 'pa55word';
+
 GRANT SELECT, INSERT, DELETE, UPDATE
 ON my_guitar_shop1.*
-TO mgs_user@localhost
+TO mgs_user@localhost;
+
+CREATE USER IF NOT EXISTS mgs_tester@localhost
 IDENTIFIED BY 'pa55word';
 
 GRANT SELECT
 ON products
-TO mgs_tester@localhost
-IDENTIFIED BY 'pa55word';
+TO mgs_tester@localhost;
