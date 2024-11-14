@@ -132,7 +132,7 @@ INSERT INTO orderItems (itemID, orderID, productID, itemPrice, discountAmount, q
 (4, 3, 6, '549.99', '0.00', 1);
 
 INSERT INTO administrators (adminID, emailAddress, password, firstName, lastName) VALUES
-(1, 'admin@myguitarshop.com', '6a718fbd768c2378b511f8249b54897f940e9022', 'Admin', 'User'),
+(1, 'admin@myguitarshop.com', '$2y$10$lHqybsUxtrV/y6j6WfG3.utNzpVTkNCm/neRFPnaaQiBWOJVIIEiq', 'Admin', 'User'),
 (2, 'joel@murach.com', '971e95957d3b74d70d79c20c94e9cd91b85f7aae', 'Joel', 'Murach'),
 (3, 'mike@murach.com', '3f2975c819cefc686282456aeae3a137bf896ee8', 'Mike', 'Murach');
 
