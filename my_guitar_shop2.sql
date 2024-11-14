@@ -4,6 +4,8 @@ CREATE DATABASE my_guitar_shop2;
 USE my_guitar_shop2;
 
 -- create the tables for the database
+SET default_storage_engine = InnoDB;
+
 CREATE TABLE customers (
   customerID        INT            NOT NULL   AUTO_INCREMENT,
   emailAddress      VARCHAR(255)   NOT NULL,
@@ -135,7 +137,9 @@ INSERT INTO administrators (adminID, emailAddress, password, firstName, lastName
 (3, 'mike@murach.com', '3f2975c819cefc686282456aeae3a137bf896ee8', 'Mike', 'Murach');
 
 -- Create a user named mgs_user
-GRANT SELECT, INSERT, UPDATE, DELETE
-ON *
-TO mgs_user@localhost
+CREATE USER IF NOT EXISTS mgs_user@localhost
 IDENTIFIED BY 'pa55word';
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON my_guitar_shop2.*
+TO mgs_user@localhost;
